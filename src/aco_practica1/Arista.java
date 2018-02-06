@@ -1,44 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aco_practica1;
 
-/**
- *
- * @author usuario
- */
-class Arista {
-   
-    private Nodo next;
+public class Arista {
+
+    private int nodoInicial;
+    private int nodoSiguiente;
     private int peso;
 
-    public Arista(Nodo next, int peso) {
-        this.next = next;
+    public Arista(int nodoInicial, int nodoSiguiente, int peso) {
+        this.nodoInicial = nodoInicial;
+        this.nodoSiguiente = nodoSiguiente;
         this.peso = peso;
     }
 
-    public Nodo getNext() {
-        return next;
+    public int getNodoInicial() {
+        return nodoInicial;
+    }
+
+    public int getNodoSiguiente() {
+        return nodoSiguiente;
     }
 
     public int getPeso() {
         return peso;
     }
 
-    public void setNext(Nodo next) {
-        this.next = next;
+    public void setNodoInicial(int nodoInicial) {
+        this.nodoInicial = nodoInicial;
+    }
+
+    public void setNodoSiguiente(int nodoSiguiente) {
+        this.nodoSiguiente = nodoSiguiente;
     }
 
     public void setPeso(int peso) {
         this.peso = peso;
     }
-
-    @Override
-    public String toString() {
-        return " voy a Nodo " + next + ", con peso " + peso;
-    }
-    
-    
 }
