@@ -19,7 +19,7 @@ public class Grafo {
         aristas = new ArrayList<>();
         try {
             BufferedReader br = Files.newBufferedReader(path, Charset.forName("UTF-8"));
-            String line = null;
+            String line;
             line = br.readLine();
             nNodos = Integer.parseInt(line);
             initializeNodes();
@@ -30,7 +30,6 @@ public class Grafo {
                 int peso = Integer.parseInt(param[2]);
                 pesos[nodoInicial][nodoFinal] = peso;
                 pesos[nodoFinal][nodoInicial] = peso;
-                //System.out.println("Soy " + param[0] + " voy a " + param[1] + " con peso " + param[2]);
             }
         } catch (IOException ex) {
             Logger.getLogger(Grafo.class.getName()).log(Level.SEVERE, null, ex);
@@ -74,7 +73,6 @@ public class Grafo {
                     aristas.add(new Arista(i, j, pesos[i][j]));
                 }
             }
-
         }
     }
 }
