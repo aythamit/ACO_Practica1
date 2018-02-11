@@ -41,6 +41,7 @@ public class Grafo {
     public Grafo() {
         nNodos = 0;
         aristas = new ArrayList<>();
+        initializeNodes();
     }
     
 

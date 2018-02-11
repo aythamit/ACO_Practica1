@@ -26,8 +26,16 @@ public class Kruskal {
         }
     }
     
+    public void mostrarAristas() {
+        for (Arista arista : grafo.getAristas()) {
+            System.out.println("Soy el nodo " + arista.getNodoInicial() + " voy a " 
+                    + arista.getNodoSiguiente() + " con peso " + arista.getPeso());
+        }
+    }
+    
     public Grafo execMST() {
         ordenarAristas();
+        mostrarAristas();
         int nNodos = grafo.getnNodos();
         Grafo mst = new Grafo();
         inicializarConjunto();

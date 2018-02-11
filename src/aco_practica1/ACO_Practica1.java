@@ -9,6 +9,8 @@ public class ACO_Practica1 {
         
         Path path = Paths.get("grafo1.txt");
         Grafo g1 = new Grafo(path);
+        Kruskal kurskal = new Kruskal(g1);
+        kurskal.execMST();
     }
     
 }
