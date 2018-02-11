@@ -1,17 +1,13 @@
 package aco_practica1;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Kruskal {
     private int[] conjunto;
     private Grafo grafo;
-    private int[] pesos;
 
-    public Kruskal(Grafo grafo, int[] pesos) {
+    public Kruskal(Grafo grafo) {
         this.grafo = grafo;
-        this.pesos = pesos;
     }
     
     private void ordenarAristas() {
@@ -28,5 +24,13 @@ public class Kruskal {
         for (int i = 0; i < grafo.getnNodos(); i++) {
             conjunto[i] = 0;
         }
+    }
+    
+    public Grafo execMST() {
+        ordenarAristas();
+        int nNodos = grafo.getnNodos();
+        Grafo mst = new Grafo();
+        inicializarConjunto();
+        return mst;
     }
 }

@@ -38,6 +38,12 @@ public class Grafo {
         construirAristas();
     }
 
+    public Grafo() {
+        nNodos = 0;
+        aristas = new ArrayList<>();
+    }
+    
+
     private void initializeNodes() {
         pesos = new int[nNodos][nNodos];
         for (int i = 0; i < nNodos; i++) {
