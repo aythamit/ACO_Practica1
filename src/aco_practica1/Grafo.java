@@ -75,4 +75,8 @@ public class Grafo {
             }
         }
     }
+
+    public int getnNodos() {
+        return nNodos;
+    }
 }
