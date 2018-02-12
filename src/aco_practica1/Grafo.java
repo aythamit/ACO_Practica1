@@ -41,20 +41,8 @@ public class Grafo {
     public Grafo() {
         nNodos = 0;
         aristas = new ArrayList<>();
-        initializeNodes();
     }
     
-
-    private void initializeNodes() {
-        pesos = new int[nNodos][nNodos];
-        for (int i = 0; i < nNodos; i++) {
-            for (int j = 0; j < nNodos; j++) {
-                pesos[i][j] = -1;
-            }
-        }
-
-    }
-
     public int[][] getMatrizPesos() {
         return pesos;
     }
