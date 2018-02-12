@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 public class Grafo {
 
     private int nNodos;
-    private int[][] pesos;
     private ArrayList<Arista> aristas;
 
     public Grafo(Path path) {
@@ -22,29 +21,22 @@ public class Grafo {
             String line;
             line = br.readLine();
             nNodos = Integer.parseInt(line);
-            initializeNodes();
             while ((line = br.readLine()) != null) {
                 String param[] = line.split(" ");
-                int nodoInicial = Integer.parseInt(param[0]) - 1;
-                int nodoFinal = Integer.parseInt(param[1]) - 1;
+                int nodoInicial = Integer.parseInt(param[0]);
+                int nodoFinal = Integer.parseInt(param[1]);
                 int peso = Integer.parseInt(param[2]);
-                pesos[nodoInicial][nodoFinal] = peso;
-                pesos[nodoFinal][nodoInicial] = peso;
+                aristas.add(new Arista(nodoInicial, nodoFinal, peso));
             }
         } catch (IOException ex) {
             Logger.getLogger(Grafo.class.getName()).log(Level.SEVERE, null, ex);
         }
         mostrarGrafo();
-        construirAristas();
     }
 
-    public Grafo() {
-        nNodos = 0;
+    public Grafo(int nNodos) {
+        this.nNodos  = nNodos;
         aristas = new ArrayList<>();
-    }
-    
-    public int[][] getMatrizPesos() {
-        return pesos;
     }
 
     public ArrayList<Arista> getAristas() {
@@ -52,26 +44,20 @@ public class Grafo {
     }
 
     public void mostrarGrafo() {
-        for (int i = 0; i < nNodos; i++) {
-            for (int j = 0; j < nNodos; j++) {
-                if (pesos[i][j] >= 0) {
-                    System.out.println("Del nodo " + (i + 1) + " voy al nodo " + (j + 1) + " con peso " + pesos[i][j] + " \n");
-                }
-            }
+        System.out.println("MOSTRAR GRAFO");
+        for (Arista arista : aristas) {
+            System.out.println("Soy el nodo " + arista.getNodoInicial() 
+                        + " voy a " + arista.getNodoSiguiente() 
+                        + " con peso " + arista.getPeso());
         }
-    }
-
-    private void construirAristas() {
-        for (int i = 0; i < nNodos; i++) {
-            for (int j = 0; j < i; j++) {
-                if (pesos[i][j] >= 0) {
-                    aristas.add(new Arista(i, j, pesos[i][j]));
-                }
-            }
-        }
+        System.out.println("");
     }
 
     public int getnNodos() {
         return nNodos;
+    }
+    
+    public void setAristas(int a, int b, int peso) {
+        aristas.add(new Arista(a, b, peso));
     }
 }
