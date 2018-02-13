@@ -68,10 +68,20 @@ public class Kruskal {
                         arista.getPeso());
             }
         }
-        for (int i : conjunto) {
-            System.out.println(i);
-        }
         return mst;
+    }
+    
+    public void mostrarConjuntos(int nNodos) {
+        System.out.print("Conjuntos = [");
+        int count = 0;
+        for (int i : conjunto) {
+            if(count < nNodos - 1)
+                System.out.print(i + ", ");
+            else
+                System.out.println(i + "]");
+            count++;
+        }
+        System.out.println("");
     }
 }
 

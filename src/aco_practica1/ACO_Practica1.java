@@ -13,22 +13,25 @@ public class ACO_Practica1 {
         Kruskal kruskal = new Kruskal(g1);
         Grafo result = kruskal.execMST();
         System.out.println("===== RESULTADO ======");
+        kruskal.mostrarConjuntos(result.getnNodos());
         result.mostrarGrafo();
         
         System.out.println("===== CASO 2 ======");
         path = Paths.get("grafo2.txt");
         Grafo g2 = new Grafo(path);
-        Kruskal kurskal2 = new Kruskal(g2);
-        result = kurskal2.execMST();
+        Kruskal kruskal2 = new Kruskal(g2);
+        result = kruskal2.execMST();
         System.out.println("===== RESULTADO ======");
+        kruskal2.mostrarConjuntos(result.getnNodos());
         result.mostrarGrafo();
         
         System.out.println("===== CASO 3 ======");
         path = Paths.get("grafo3.txt");
         Grafo g3 = new Grafo(path);
-        Kruskal kurskal3 = new Kruskal(g3);
-        result = kurskal3.execMST();
+        Kruskal kruskal3 = new Kruskal(g3);
+        result = kruskal3.execMST();
         System.out.println("===== RESULTADO ======");
+        kruskal3.mostrarConjuntos(result.getnNodos());
         result.mostrarGrafo();
     }
     
