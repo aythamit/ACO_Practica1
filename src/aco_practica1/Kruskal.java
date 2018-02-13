@@ -22,13 +22,13 @@ public class Kruskal {
     private void inicializarConjunto() {
         conjunto = new int[grafo.getnNodos()];
         for (int i = 0; i < grafo.getnNodos(); i++) {
-            conjunto[i] = 0;
+            conjunto[i] = -1;
         }
     }
     
     private int buscar(int v) {
-        int i = v;
-        while (conjunto[i] > 0) {
+        int i = v - 1;
+        while (conjunto[i] > -1) {
             i = conjunto[i];
         }
         return i;
@@ -49,22 +49,27 @@ public class Kruskal {
     
     public Grafo execMST() {
         ordenarAristas();
+        System.out.println("GRAFO ORDENADO : ");
         grafo.mostrarGrafo();
         int nNodos = grafo.getnNodos();
         Grafo mst = new Grafo(nNodos);
         inicializarConjunto();
         
-        while(mst.getAristas().size() < mst.getnNodos() - 1) {
+        while(mst.getAristas().size() < mst.getnNodos() - 1 
+                && ! grafo.getAristas().isEmpty()) {
             Arista arista = grafo.getAristas().get(0);
             grafo.getAristas().remove(0);
             
-            int uconj = buscar(arista.getNodoInicial() -1);
-            int vconj = buscar(arista.getNodoSiguiente() -1);
+            int uconj = buscar(arista.getNodoInicial());
+            int vconj = buscar(arista.getNodoSiguiente());
             if(uconj != vconj) {
                 fusionar(uconj, vconj);
                 mst.setAristas(arista.getNodoInicial(), arista.getNodoSiguiente(), 
                         arista.getPeso());
             }
+        }
+        for (int i : conjunto) {
+            System.out.println(i);
         }
         return mst;
     }
