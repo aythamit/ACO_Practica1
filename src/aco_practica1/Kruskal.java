@@ -49,8 +49,6 @@ public class Kruskal {
     
     public Grafo execMST() {
         ordenarAristas();
-        System.out.println("GRAFO ORDENADO : ");
-        grafo.mostrarGrafo();
         int nNodos = grafo.getnNodos();
         Grafo mst = new Grafo(nNodos);
         inicializarConjunto();

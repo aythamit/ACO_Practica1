@@ -16,7 +16,7 @@ public class ACO_Practica1 {
         kruskal.mostrarConjuntos(result.getnNodos());
         result.mostrarGrafo();
         
-        System.out.println("===== CASO 2:  ======");
+        System.out.println("===== CASO 2: GRAFO CON CAMINOS PARALELOS ======");
         path = Paths.get("grafo2.txt");
         Grafo g2 = new Grafo(path);
         Kruskal kruskal2 = new Kruskal(g2);
@@ -25,7 +25,7 @@ public class ACO_Practica1 {
         kruskal2.mostrarConjuntos(result.getnNodos());
         result.mostrarGrafo();
         
-        System.out.println("===== CASO 3 ======");
+        System.out.println("===== CASO 3: GRAFO INCOMPLETO ======");
         path = Paths.get("grafo3.txt");
         Grafo g3 = new Grafo(path);
         Kruskal kruskal3 = new Kruskal(g3);
@@ -34,7 +34,7 @@ public class ACO_Practica1 {
         kruskal3.mostrarConjuntos(result.getnNodos());
         result.mostrarGrafo();
         
-        System.out.println("===== CASO 4 ======");
+        System.out.println("===== CASO 4: GRAFO COMPLETO ======");
         path = Paths.get("grafo4.txt");
         Grafo g4 = new Grafo(path);
         Kruskal kruskal4 = new Kruskal(g4);
@@ -43,7 +43,7 @@ public class ACO_Practica1 {
         kruskal4.mostrarConjuntos(result.getnNodos());
         result.mostrarGrafo();
         
-        System.out.println("===== CASO 5 ======");
+        System.out.println("===== CASO 5: GRAFO COMPLETO CON BUCLES ======");
         path = Paths.get("grafo5.txt");
         Grafo g5 = new Grafo(path);
         Kruskal kruskal5 = new Kruskal(g5);
